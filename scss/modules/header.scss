@@ -1,0 +1,202 @@
+#dc_header {
+    padding: 0 20px;
+    position: fixed;
+    width: 1082px;
+    top: 0;
+    z-index: 9999;
+    background: white;
+    overflow: hidden;
+    ul {
+        padding: 0;
+        list-style:none;
+    }
+}
+
+.logo{
+    float: left;
+    margin: 13px 21px 0 0;
+     img {
+        width: 198px;
+    }
+}
+
+.dc_connect {
+    position: relative;
+    float: right;
+    margin: 30px 0 0;
+    li {
+        float: left;
+        position: relative;
+        margin-left: 10px;
+        .fa {
+            font-size: 20px;
+            color: $text-color;
+        }
+    }
+    .dch_search {
+        position: absolute !important;
+        right: 0;
+        top: 100%;
+        width: 284px;
+        padding: 5px;
+        background: white;
+        z-index: 9;
+        border: 1px solid rgba(0,0,0,0.1);
+        
+        button {
+            border: none;
+            background: $brand-primary;
+            color: white;
+            height: 30px;
+            text-transform: uppercase;
+            font-size: 12px;
+        }
+    }
+}
+
+.dc_trending {
+      background: rgba(0, 0, 0, 0) linear-gradient(#454545 0%, #555555 100%) repeat scroll 0 0;
+    color: #fff;
+    font-size: 14px;
+    line-height: 25px;
+    margin: 0 -20px;
+    overflow: hidden;
+    ul {
+        padding: 0;
+        margin:0;
+        list-style: none;
+          background: #4b73b9 none repeat scroll 0 0;
+            overflow: hidden;
+            padding-left: 0;
+            position: relative;
+            z-index: 2;
+        li {
+            float: left;
+            margin: 0 20px 0 0;
+        }
+    }
+    h3 {
+          float: left;
+        font-weight: 500;
+        padding: 5px 21px 0 0;
+        position: relative;
+        text-align: center;
+        width: 126px;
+        font-size: 14px;
+        margin: 0;
+
+        &:after {
+             background: #4b73b9 none repeat scroll 0 0;
+                content: "";
+                height: 150px;
+                position: absolute;
+                right: -85px;
+                top: 20px;
+                transform: rotate(45deg);
+                width: 150px;
+
+        }
+    }
+    a {
+           color: #f5f5f5;
+          display: block;
+        font-weight: 500;
+        max-width: 200px;
+        overflow: hidden;
+        padding: 0 5.2px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+    }
+}
+
+// responsve 767
+
+@include xs {
+    .open .dc_nav_mobile {
+        background: rgba(0, 0, 0, 0.8) none repeat scroll 0 0;
+        display: block !important;
+        height: 100%;
+        padding: 40px 20px;
+        position: fixed;
+        right: 0;
+        width: 70vw;
+        top: 0;
+        @include translateX(0)
+        z-index: 99999999;
+        a {
+            color: white;
+
+        }
+        ul {
+            padding: 0;
+            list-style: none;
+        }
+    }
+    .open {
+        overflow: hidden;
+        padding: 0;
+        > .dc_main {
+            position: relative;
+
+             @include translateX(-70vw)
+        }
+    }
+    .dc_nav_mobile {
+        position: fixed;
+        @include translateX(70vw)
+        
+    }
+    .mobile-toggle {
+        border: 2px solid grey;
+        border-radius: 3px;
+        display: block !important;
+        padding: 5px;
+        position: absolute;
+        right: 20px;
+        top: 64px;
+        z-index: 9;
+        span {
+            background: grey none repeat scroll 0 0;
+            display: block;
+            height: 2px;
+            margin: 4px 0;
+            width: 29px;
+        }
+    }
+    .dc_trending {
+    
+      ul li {
+            float: none;
+            a {
+                    max-width: 100%;
+            }
+        }
+    }
+    .dc_nav {
+        display: none;
+    }
+    .logo {
+        float: none;
+        margin: 15px 0 15px 15px;
+    }
+    .dc_connect .dch_search {
+        width: 100vw;
+    }
+    body {
+        padding-top: 126px;
+    }
+    #dc_header {
+        width: 100%;
+        position: static;
+    }
+    .top-header {
+        position: fixed;
+        left: 0;
+        width: 100%;
+        top: 0;
+        background: white;
+        border-bottom: 1px solid #eee;
+        z-index: 999;
+    }
+}
